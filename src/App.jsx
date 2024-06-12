@@ -72,6 +72,13 @@ function App() {
         cart={shoppingCart}
         onUpdateCartItemQuantity={handleUpdateCartItemQuantity}
       />
+
+      {/* Moved <Product> up to be wrapped by <Shop> in the <App>.
+          This way, we can reduce 1 layer of drilling props. Thus, we can
+          pass pointer of the function 'handleAddItemToCart' directly from
+          the <App> component to the <Product> and bypass the <Shop>.
+          This technique is call 'COMPONENT COMPOSITIONS'  
+      */}
       <Shop>
         {DUMMY_PRODUCTS.map((product) => (
           <li key={product.id}>
