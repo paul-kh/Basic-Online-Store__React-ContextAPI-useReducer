@@ -5,6 +5,10 @@ import Shop from "./components/Shop.jsx";
 import Product from "./components/Product.jsx";
 import { DUMMY_PRODUCTS } from "./dummy-products.js";
 
+// Using React's Context API instead of Component Compositions
+// to solve issue with Props Drilling
+import { CartContext } from "./store/shopping-cart-context.jsx";
+
 function App() {
   const [shoppingCart, setShoppingCart] = useState({
     items: [],
@@ -67,7 +71,9 @@ function App() {
   }
 
   return (
-    <>
+    // Use Provider property of the 'CartContext' to wrap all the components that
+    // need to access state that is stored in the context
+    <CartContext.Provider>
       <Header
         cart={shoppingCart}
         onUpdateCartItemQuantity={handleUpdateCartItemQuantity}
@@ -89,7 +95,7 @@ function App() {
           </li>
         ))}
       </Shop>
-    </>
+    </CartContext.Provider>
   );
 }
 
