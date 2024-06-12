@@ -72,8 +72,10 @@ function App() {
 
   return (
     // Use Provider property of the 'CartContext' to wrap all the components that
-    // need to access state that is stored in the context
-    <CartContext.Provider>
+    // need to access state that is stored in the context.
+    // Note: The default 'value' is set only for component that was not wrapped by
+    //       the <Provider> component and that tries to access the context value
+    <CartContext.Provider value={{ items: [] }}>
       <Header
         cart={shoppingCart}
         onUpdateCartItemQuantity={handleUpdateCartItemQuantity}
