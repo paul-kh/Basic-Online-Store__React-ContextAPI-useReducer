@@ -79,7 +79,7 @@ function App() {
           the <App> component to the <Product> and bypass the <Shop>.
           This technique is called 'COMPONENT COMPOSITIONS'.
           However, the downsize of this solution is that the <App> component
-          can be BLOADED with too many Component Compositions when we keep
+          can be BLOATED with too many Component Compositions when we keep
           moving components up to be wrapped inside of the <App>. 
       */}
       <Shop>
