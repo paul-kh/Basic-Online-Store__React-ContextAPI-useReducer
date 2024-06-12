@@ -77,7 +77,10 @@ function App() {
           This way, we can reduce 1 layer of drilling props. Thus, we can
           pass pointer of the function 'handleAddItemToCart' directly from
           the <App> component to the <Product> and bypass the <Shop>.
-          This technique is call 'COMPONENT COMPOSITIONS'  
+          This technique is called 'COMPONENT COMPOSITIONS'.
+          However, the downsize of this solution is that the <App> component
+          can be BLOADED with too many Component Compositions when we keep
+          moving components up to be wrapped inside of the <App>. 
       */}
       <Shop>
         {DUMMY_PRODUCTS.map((product) => (
