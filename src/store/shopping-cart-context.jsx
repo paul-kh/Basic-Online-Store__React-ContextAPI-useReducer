@@ -4,7 +4,7 @@ as Component Composition can lead to the <App> component BLOATED.
 *************************************************************************************/
 
 // Using "useReducer" hook to replace "useState" hook
-import { createContext, useReducer, useState } from "react";
+import { createContext, useReducer } from "react";
 
 import { DUMMY_PRODUCTS } from "../dummy-products";
 
@@ -99,10 +99,6 @@ export default function CartContextProvider({ children }) {
       items: [],
     }
   );
-
-  const [shoppingCart, setShoppingCart] = useState({
-    items: [],
-  });
 
   function handleAddItemToCart(id) {
     // Dispatching action that will be taken by Reducer function
