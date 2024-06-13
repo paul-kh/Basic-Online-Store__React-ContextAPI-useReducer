@@ -73,6 +73,7 @@ function App() {
   const ctxValue = {
     items: shoppingCart.items,
     addItemToCart: handleAddItemToCart, // Exposing a state-updating function through Context
+    updateItemQuantity: handleUpdateCartItemQuantity, // Exposing a state-updating function through Context
   };
 
   return (
@@ -81,10 +82,7 @@ function App() {
     // Note: The default 'value' is set only for component that was not wrapped by
     //       the <Provider> component and that tries to access the context value
     <CartContext.Provider value={ctxValue}>
-      <Header
-        cart={shoppingCart}
-        onUpdateCartItemQuantity={handleUpdateCartItemQuantity}
-      />
+      <Header />
       {/* Moved <Product> up to be wrapped by <Shop> in the <App>.
           This way, we can reduce 1 layer of drilling props. Thus, we can
           pass pointer of the function 'handleAddItemToCart' directly from
@@ -97,7 +95,7 @@ function App() {
       <Shop>
         {DUMMY_PRODUCTS.map((product) => (
           <li key={product.id}>
-            <Product {...product} onAddToCart={handleAddItemToCart} />
+            <Product {...product} />
           </li>
         ))}
       </Shop>

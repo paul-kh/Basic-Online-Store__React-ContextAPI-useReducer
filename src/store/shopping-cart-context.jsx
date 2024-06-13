@@ -8,4 +8,5 @@ export const CartContext = createContext({
   // We define the value here just for auto completion purpose in IDE only
   items: [],
   addItemToCart: () => {},
+  updateItemQuantity: () => {},
 });
