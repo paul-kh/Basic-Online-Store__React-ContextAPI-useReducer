@@ -95,6 +95,7 @@ export default function CartContextProvider({ children }) {
   *****************************************************************************************/
   const [shoppingCartState, shoppingCartDispatch] = useReducer(
     shoppingCartReducer,
+    // defining model of our state data schema here:
     {
       items: [],
     }
