@@ -76,6 +76,7 @@ export default function CartContextProvider({ children }) {
     });
   }
 
+  // HERE IS THE REAL VALUE OF THE CONTEXT WE DEFINED AT THE TOP
   const ctxValue = {
     items: shoppingCart.items,
     addItemToCart: handleAddItemToCart, // Exposing a state-updating function through Context
