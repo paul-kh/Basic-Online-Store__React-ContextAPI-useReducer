@@ -7,7 +7,7 @@ The app is a basic online store where user can add items to cart, update items i
 - App Homepage:
   ![snapshot of app homepage](./src/assets/app-homepage.png)
 
-- Structure of Component & State:
+- Component Tree Structure & State Management Flow:
   ![snapshot of app homepage](./src/assets/coponent-tree-state.png)
 
 ## User Story
